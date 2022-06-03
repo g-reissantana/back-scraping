@@ -9,24 +9,24 @@ export const routes = express.Router();
 
 routes.get('/', async(req, res) => {
 
-    const result = await getAllPosts();
+    // const result = await getAllPosts();
 
-    return res.status(200).json(result)
+    return res.send('Ola mundo')
 })
 
-routes.post('/scripts/crawler/refresh', isAdminMiddleware, async (req, res) => {
+// routes.post('/scripts/crawler/refresh', isAdminMiddleware, async (req, res) => {
 
-    setInterval(async() => {
-        console.log('REFRESH_LIST');
-        const result = await getLastPostsCrawler();
-    }, 5000);
+//     setInterval(async() => {
+//         console.log('REFRESH_LIST');
+//         const result = await getLastPostsCrawler();
+//     }, 5000);
 
-    return res.status(200).send('OK');
-})
+//     return res.status(200).send('OK');
+// })
 
-routes.post('/scripts/crawler/getAll', isAdminMiddleware, async(req, res) => {
+// routes.post('/scripts/crawler/getAll', isAdminMiddleware, async(req, res) => {
 
-    const result = await getAllPostsCrawler();
+//     const result = await getAllPostsCrawler();
 
-    return res.status(201).json({message: 'CREATE_SUCCESSFUL'})
-})
+//     return res.status(201).json({message: 'CREATE_SUCCESSFUL'})
+// })
